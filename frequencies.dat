@@ -1,11 +1,11 @@
-#### First Formant Frequencies#
+#### First Formant Frequencies####
 # Defined by spectral estimation #
-# of a selected KPA using  #
-# welch method ###
-# Utilize only on major keys #
+# of a selected KPA using        #
+# welch method                   #
+# Utilize only on major keys     #
 # values for the minor keys are  #
 # for table completion, no use   #
-# The first MIDI No is 57        #
+# The first MIDI No is 60        #
 ##################################
 
 486.3
@@ -13,15 +13,11 @@
 544.9
 544.9
 615.2
-
 662.1
 662.1
 732.4
-
 732.4
 826.2
-
 826.2
 937.5
-
 966.8
