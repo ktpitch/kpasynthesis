@@ -1,17 +1,26 @@
- <CsoundSynthesizer>
+<CsoundSynthesizer>
 <CsOptions>
 ; --sched for realtime
 ; -o hw:0 for output device
 ; -+rtmidi=alsa for alsa midi
 ; -Ma for all MIDI input devices, could be -M hw:2 if a specific device is prefered
 ; list of audio device can be found by using cat /proc/asound/cards
--+rtmidi = portmidi -Ma -odac ;hw:2
+;-+rtmidi = portmidi -Ma -odac ;hw:2
 </CsOptions>
 <CsInstruments>
 sr = 48000
 ksmps = 10
 nchnls = 1
 0dbfs = 1
+massign 1,1
+
+; Table for 4th order butterworth bandpass coefficients
+; Table #3, 0 time, 0 size, gen 1 no scaling, file butter_coefs.wav, 0 skiptime, channel 1, format 16 bit
+butttab	ftgen	3,	0,	0,	-1,	"butter_coefs.wav",	0, 	1,	4 
+
+; Initial 17 elements i-rate array
+iButt[] init	17
+copyf2array	iButt,	butttab
 
 opcode bandpass, a, a
 	ax		xin
